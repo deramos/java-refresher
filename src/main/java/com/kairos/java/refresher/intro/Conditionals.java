@@ -12,7 +12,7 @@ public class Conditionals {
             System.out.printf("Hello... %d\n", x);
         }
         else {
-            System.out.printf("Bye... %d", x);
+            System.out.printf("Bye... %d\n", x);
         }
 
         int n = 4;
@@ -31,6 +31,13 @@ public class Conditionals {
                 break;
 
         }
+
+        int i = 1;
+        while (i < 10) {
+            System.out.println("Hello " + i);
+            i++;
+        }
+        System.out.println("Bye " + i);
 
     }
 }
