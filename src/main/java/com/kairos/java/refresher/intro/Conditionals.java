@@ -16,6 +16,21 @@ public class Conditionals {
         }
 
         int n = 4;
-        int result = n % 2 == 0 ? 10 : 20;
+        switch(n) {
+            case 1:
+                System.out.println("Monday");
+                break;
+            case 2:
+                System.out.println("Tuesday");
+                break;
+            case 3:
+                System.out.println("Wednesday");
+                break;
+            case 4:
+                System.out.println("Thursday");
+                break;
+
+        }
+
     }
 }
