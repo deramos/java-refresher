@@ -26,28 +26,29 @@ class Human {
     }
 }
 
-
-public class Capsules {
-    public static void main(String[] args) {
-        Dog husky = new Dog();
-        System.out.println(husky);
-    }
-}
-
 abstract class Animal {
+    public Animal() {
+        System.out.println("Inside animal");
+    }
     String name;
     String breed;
 }
 
-abstract class Runner {
+abstract class Runner extends Animal {
+    public Runner() {
+        System.out.println("Inside runner");
+    }
     String action;
 }
 
-class Dog extends Animal {
+class Dog extends Runner {
     String bark;
-
     public Dog() {
-        this.name = "Jimmy";
+        System.out.println("inside dog");
+    }
+    public Dog(String name) {
+        this();
+        this.name = name;
         this.breed = "Husky";
         this.bark = "whoof";
     }
@@ -55,5 +56,13 @@ class Dog extends Animal {
     @Override
     public String toString(){
         return this.name + " is a " + this.breed + " who " + this.bark + "s";
+    }
+}
+
+
+public class Capsules {
+    public static void main(String[] args) {
+        Dog husky = new Dog("Jimmy");
+        System.out.println(husky);
     }
 }
