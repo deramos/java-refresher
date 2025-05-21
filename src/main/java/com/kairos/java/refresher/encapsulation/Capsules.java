@@ -29,10 +29,31 @@ class Human {
 
 public class Capsules {
     public static void main(String[] args) {
-        Human human = new Human();
-        human.setName("Chidera");
-        human.setAge(11);
+        Dog husky = new Dog();
+        System.out.println(husky);
+    }
+}
 
-        System.out.println(human.toString());
+abstract class Animal {
+    String name;
+    String breed;
+}
+
+abstract class Runner {
+    String action;
+}
+
+class Dog extends Animal {
+    String bark;
+
+    public Dog() {
+        this.name = "Jimmy";
+        this.breed = "Husky";
+        this.bark = "whoof";
+    }
+
+    @Override
+    public String toString(){
+        return this.name + " is a " + this.breed + " who " + this.bark + "s";
     }
 }
