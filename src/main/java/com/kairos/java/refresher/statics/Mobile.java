@@ -9,6 +9,11 @@ public class Mobile {
         System.out.println(this.brand + " : " + price + " : " + name);
     }
 
+    public static void show1(Mobile obj) {
+        System.out.println("In static method");
+        System.out.println(obj.brand + " : " + obj.price + " : " + name);
+    }
+
     public static void main(String[] args) {
         Mobile mobile = new Mobile();
         mobile.brand = "Apple";
@@ -22,5 +27,7 @@ public class Mobile {
 
         mobile.show();
         mobile2.show();
+
+        Mobile.show1(mobile2);
     }
 }
