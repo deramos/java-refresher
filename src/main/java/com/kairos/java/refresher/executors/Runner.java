@@ -6,6 +6,5 @@ import com.kairos.java.refresher.accessmodifiers.AccessModifiers;
 public class Runner {
     public static void main(String[] args) {
         AccessModifiers modifier = new AccessModifiers();
-        modifier.variable;
     }
 }
