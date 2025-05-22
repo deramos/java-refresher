@@ -82,4 +82,16 @@ public class Question {
     public void setId(int id) {
         this.id = id;
     }
+
+    @Override
+    public String toString() {
+        return "Question{" +
+                "id=" + id +
+                ", question='" + question + '\'' +
+                ", opt1='" + opt1 + '\'' +
+                ", opt2='" + opt2 + '\'' +
+                ", opt3='" + opt3 + '\'' +
+                ", opt4='" + opt4 + '\'' +
+                '}';
+    }
 }
