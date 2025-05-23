@@ -14,6 +14,11 @@ public class BMW extends Car implements Driveable {
 
     @Override
     public void drive() {
-        System.out.println("Zoom zoom");
+        System.out.println("Zoom zoom "+ Driveable.message);
+    }
+
+    public static void main(String[] args) {
+        BMW myCar = new BMW();
+        myCar.drive();
     }
 }
