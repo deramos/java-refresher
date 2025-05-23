@@ -7,36 +7,28 @@ enum Status {
     Succeeded;
 }
 
+enum Laptop{
+    Macbook(2000), XPS(2200), Surface(1500), ThinkPad(1800);
+
+    private int price;
+
+    Laptop(int price){
+        this.price = price;
+    }
+
+    int getPrice() {
+        return this.price;
+    }
+
+    void setPrice(int price) {
+        this.price = price;
+    }
+}
+
 public class EnumDemo {
     public static void main(String[] args) {
-        Status s = Status.Failed;
-        System.out.println(s);
-
-        if (s == Status.Scheduled) {
-            System.out.println("Status Scheduled");
-        } else if (s == Status.Running) {
-            System.out.println("Status Running");
-        } else if (s == Status.Failed) {
-            System.out.println("Status Failed");
-        } else {
-            System.out.println("Status Succeeded");
-        }
-
-        // Switch Statement with Enums
-        Status ss = Status.Succeeded;
-        switch (ss) {
-            case Scheduled:
-                System.out.println("Status Scheduled");
-                break;
-            case Running:
-                System.out.println("Status Running");
-                break;
-            case Failed:
-                System.out.println("Status Failed");
-                break;
-            default:
-                System.out.println("Status Succeeded");
-                break;
-        }
+        Laptop laptop = Laptop.Macbook;
+        System.out.println(laptop.name());
+        System.out.println(laptop.getPrice());
     }
 }
