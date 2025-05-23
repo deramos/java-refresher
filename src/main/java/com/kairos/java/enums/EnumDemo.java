@@ -34,7 +34,7 @@ public class EnumDemo {
             case Failed:
                 System.out.println("Status Failed");
                 break;
-            case Succeeded:
+            default:
                 System.out.println("Status Succeeded");
                 break;
         }
