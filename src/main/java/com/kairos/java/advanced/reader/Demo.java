@@ -14,5 +14,11 @@ public class Demo {
         System.out.println(num);
 
         reader.close();
+
+        // trying try with resource
+        try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
+            String number = br.readLine();
+            System.out.println(number);
+        }
     }
 }
