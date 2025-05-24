@@ -2,15 +2,23 @@ package com.kairos.java.advanced.threads;
 
 class A extends Thread {
     public void run() {
-        for (int i=0; i<50; i++)
-            System.out.println("Hi");
+        try {
+            for (int i = 0; i < 10; i++) {
+                System.out.println("Hi");
+                Thread.sleep(100);
+            }
+        } catch (InterruptedException e) { e.printStackTrace(); }
     }
 }
 
 class B extends Thread {
     public void run() {
-        for (int i=0; i<50; i++)
-            System.out.println("Hello");
+        try {
+            for (int i = 0; i < 10; i++) {
+                System.out.println("Hello");
+                Thread.sleep(100);
+            }
+        } catch (InterruptedException e) { e.printStackTrace(); }
     }
 }
 
