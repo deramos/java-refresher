@@ -4,6 +4,10 @@ abstract class Car implements Driveable {
     abstract void service();
 }
 
+@FunctionalInterface
+interface A {
+    void show(int i);
+}
 
 public class BMW extends Car implements Driveable {
 
@@ -20,5 +24,16 @@ public class BMW extends Car implements Driveable {
     public static void main(String[] args) {
         BMW myCar = new BMW();
         myCar.drive();
+
+        A a = new A() {
+            @Override
+            public void show(int i) {
+                System.out.println("In show " +i);
+            }
+        };
+
+        A aa = (i) -> System.out.println("In lambda show..."+i);
+
+        aa.show(5);
     }
 }
