@@ -1,33 +1,28 @@
 package com.kairos.java.advanced.threads;
 
-class A implements Runnable {
-    public void run() {
-        try {
-            for (int i = 0; i < 10; i++) {
-                System.out.println("Hi");
-                Thread.sleep(100);
-            }
-        } catch (InterruptedException e) { e.printStackTrace(); }
-    }
-}
-
-class B implements Runnable {
-    public void run() {
-        try {
-            for (int i = 0; i < 10; i++) {
-                System.out.println("Hello");
-                Thread.sleep(100);
-            }
-        } catch (InterruptedException e) { e.printStackTrace(); }
-    }
-}
-
 public class Demo {
     public static void main(String[] args) {
-        A a = new A();
-        B b = new B();
+        Runnable a = () -> {
+            try {
+                for (int i = 0; i < 10; i++) {
+                    System.out.println("Hi");
+                    Thread.sleep(100);
+                }
+            } catch (InterruptedException e) { e.printStackTrace(); }
+        };
 
-        new Thread(a).start();
-        new Thread(b).start();
+        Runnable b = () -> {
+            try {
+                for (int i = 0; i < 10; i++) {
+                    System.out.println("Hello");
+                    Thread.sleep(100);
+                }
+            } catch (InterruptedException e) { e.printStackTrace(); }
+        };
+
+        Thread t = new Thread(a);
+        t.start();
+        Thread t2 = new Thread(b);
+        t2.start();
     }
 }
