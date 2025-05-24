@@ -1,6 +1,6 @@
 package com.kairos.java.advanced.threads;
 
-class A extends Thread {
+class A implements Runnable {
     public void run() {
         try {
             for (int i = 0; i < 10; i++) {
@@ -11,7 +11,7 @@ class A extends Thread {
     }
 }
 
-class B extends Thread {
+class B implements Runnable {
     public void run() {
         try {
             for (int i = 0; i < 10; i++) {
@@ -27,7 +27,7 @@ public class Demo {
         A a = new A();
         B b = new B();
 
-        a.start();
-        b.start();
+        new Thread(a).start();
+        new Thread(b).start();
     }
 }
