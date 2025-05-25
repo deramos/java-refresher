@@ -1,11 +1,12 @@
 package com.kairos.java.advanced.collections;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 class Student {
-    Map<String, Integer> students;
+    Map<String, Integer> students = new ConcurrentHashMap<>();
 
-    public synchronized void addStudent(String name, int grade) {
+    public void addStudent(String name, int grade) {
         students.put(name, grade);
     }
 }
