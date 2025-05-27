@@ -30,10 +30,9 @@ public class Demo {
     public static void main(String[] args) throws UnsupportedOperationException {
         List<Integer> nums = Arrays.asList(1, 4, 2, 5, 7, 0, 3, 6);
         Stream<Integer> stream = nums.stream();
-
-        stream.forEach(System.out::println);
-
-        nums.stream().filter(n -> n%2 ==0).forEach(System.out::println);
-
+        Stream<Integer> stream2 = stream.filter(n -> n%2 == 0);
+        Stream<Integer> stream3 = stream2.map(n -> n * 2);
+        int integer = stream3.reduce(0, Integer::sum);
+        System.out.println(integer);
     }
 }
