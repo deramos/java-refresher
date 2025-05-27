@@ -34,5 +34,12 @@ public class Demo {
         Stream<Integer> stream3 = stream2.map(n -> n * 2);
         int integer = stream3.reduce(0, Integer::sum);
         System.out.println(integer);
+
+        int result = nums.stream()
+                .filter(n -> n%2 == 0)
+                .map(n -> n*2)
+                .reduce(0, Integer::sum);
+
+        System.out.println(result);
     }
 }
