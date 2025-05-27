@@ -47,9 +47,7 @@ public class MethodReferenceEx {
 
         List<Student> students = new ArrayList<>();
 
-        for(String name : names) {
-            students.add(new Student(name));
-        }
+        students = names.stream().map(Student::new).toList();
 
         System.out.println(students);
 
