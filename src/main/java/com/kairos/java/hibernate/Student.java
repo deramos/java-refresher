@@ -1,8 +1,13 @@
 package com.kairos.java.hibernate;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Student {
+    @Id
     private long sid;
-    private String sname;
+    private String sName;
     private int marks;
 
     public long getSid() {
@@ -13,12 +18,12 @@ public class Student {
         this.sid = sid;
     }
 
-    public String getSname() {
-        return sname;
+    public String getsName() {
+        return sName;
     }
 
-    public void setSname(String sname) {
-        this.sname = sname;
+    public void setsName(String sName) {
+        this.sName = sName;
     }
 
     public int getMarks() {
@@ -33,7 +38,7 @@ public class Student {
     public String toString() {
         return "Student{" +
                 "sid=" + sid +
-                ", sname='" + sname + '\'' +
+                ", sname='" + sName + '\'' +
                 ", marks=" + marks +
                 '}';
     }
