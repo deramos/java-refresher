@@ -21,9 +21,13 @@ public class JDBCExample {
         Class.forName("org.postgresql.Driver");
         Connection conn = DriverManager.getConnection(url, uName, password);
         System.out.println("Connection Established");
-        Statement statement = conn.createStatement();
 
-        boolean st = statement.execute(query);
+        PreparedStatement statement = conn.prepareStatement(query);
+        statement.setInt(1, 8);
+        statement.setInt(2, 67);
+        statement.setString(3, "Stefan");
+
+        boolean st = statement.execute();
         System.out.println(st);
 
         conn.close();
