@@ -2,6 +2,8 @@ package com.kairos.java.hibernate;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class Alien {
 
@@ -12,15 +14,15 @@ public class Alien {
     private String name;
     private String tech;
 
-    @OneToOne
-    private Laptop laptop;
+    @OneToMany
+    private List<Laptop> laptops;
 
-    public Laptop getLaptop() {
-        return laptop;
+    public List<Laptop> getLaptops() {
+        return laptops;
     }
 
-    public void setLaptop(Laptop laptop) {
-        this.laptop = laptop;
+    public void setLaptops(List<Laptop> laptops) {
+        this.laptops = laptops;
     }
 
     public long getAid() {
@@ -53,7 +55,7 @@ public class Alien {
                 "aid=" + aid +
                 ", name='" + name + '\'' +
                 ", tech='" + tech + '\'' +
-                ", laptop=" + laptop +
+                ", laptops=" + laptops +
                 '}';
     }
 }
