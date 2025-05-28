@@ -23,8 +23,9 @@ public class HibernateDemo {
             session = factory.openSession();
 
             Transaction transaction = session.beginTransaction();
+            s2 = session.find(Student.class, 12);
 
-            s2 = session.merge(s1);
+            session.remove(s2);
 
             transaction.commit();
 
