@@ -7,12 +7,12 @@ import org.hibernate.cfg.Configuration;
 
 public class HibernateDemo {
     public static void main(String[] args) {
-        Student s1 = new Student();
-        s1.setSid(12);
-        s1.setsName("Sally");
-        s1.setMarks(89);
+        Alien alien = new Alien();
+        alien.setAid(1);
+        alien.setName("Chidera");
+        alien.setTech("Java");
 
-        Student s2 = null;
+        Alien a2 = null;
 
         Configuration configuration = new Configuration();
         configuration.addAnnotatedClass(com.kairos.java.hibernate.Student.class);
@@ -23,13 +23,13 @@ public class HibernateDemo {
             session = factory.openSession();
 
             Transaction transaction = session.beginTransaction();
-            s2 = session.find(Student.class, 12);
+            a2 = session.find(Alien.class, 1);
 
-            session.remove(s2);
+            session.persist(alien);
 
             transaction.commit();
 
-            System.out.println(s2);
+            System.out.println(a2);
         }
 
     }

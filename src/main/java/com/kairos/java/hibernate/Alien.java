@@ -1,13 +1,16 @@
 package com.kairos.java.hibernate;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 
 @Entity
 public class Alien {
+
+    @Id
     private long aid;
+
+    @Column(name = "alien_name")
     private String name;
     private String tech;
-
 
     public long getAid() {
         return aid;
