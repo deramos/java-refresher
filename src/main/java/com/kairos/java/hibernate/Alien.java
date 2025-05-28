@@ -12,6 +12,17 @@ public class Alien {
     private String name;
     private String tech;
 
+    @OneToOne
+    private Laptop laptop;
+
+    public Laptop getLaptop() {
+        return laptop;
+    }
+
+    public void setLaptop(Laptop laptop) {
+        this.laptop = laptop;
+    }
+
     public long getAid() {
         return aid;
     }
@@ -42,6 +53,7 @@ public class Alien {
                 "aid=" + aid +
                 ", name='" + name + '\'' +
                 ", tech='" + tech + '\'' +
+                ", laptop=" + laptop +
                 '}';
     }
 }

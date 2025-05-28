@@ -12,6 +12,7 @@
         <!-- JDBC props… -->
         <mapping class="com.kairos.java.hibernate.Student"/>
         <mapping class="com.kairos.java.hibernate.Alien"/>
+        <mapping class="com.kairos.java.hibernate.Laptop"/>
 
     </session-factory>
 </hibernate-configuration>
