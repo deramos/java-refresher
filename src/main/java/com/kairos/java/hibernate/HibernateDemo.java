@@ -18,7 +18,8 @@ public class HibernateDemo {
         try (SessionFactory factory = configuration.buildSessionFactory()) {
             session = factory.openSession();
 
-            Query query = session.createQuery("from Laptop where brand like 'Asus'");
+            Query query = session.createQuery("from Laptop where brand like ?1");
+            query.setParameter(1, "Asus");
             List<Laptop> laptops = query.getResultList();
 
             System.out.println(laptops);
