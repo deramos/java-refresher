@@ -14,7 +14,7 @@ public class Alien {
     private String name;
     private String tech;
 
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany
     private List<Laptop> laptops;
 
     public List<Laptop> getLaptops() {
