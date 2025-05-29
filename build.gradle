@@ -15,6 +15,14 @@ dependencies {
 
     // https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core
     implementation 'org.hibernate.orm:hibernate-core:7.0.0.Final'
+    // https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-jcache
+    implementation 'org.hibernate.orm:hibernate-jcache:7.0.0.Final'
+
+    // https://mvnrepository.com/artifact/javax.cache/cache-api
+    implementation 'javax.cache:cache-api:1.1.1'
+
+    // https://mvnrepository.com/artifact/org.ehcache/ehcache
+    implementation 'org.ehcache:ehcache:3.10.8'
 
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
