@@ -58,7 +58,7 @@ public class HibernateDemo {
             session.persist(a1);
             session.persist(a2);
 
-            Alien a2_new = session.find(Alien.class, 2);
+            Alien a2_new = session.find(Alien.class, 1);
 
             transaction.commit();
 
